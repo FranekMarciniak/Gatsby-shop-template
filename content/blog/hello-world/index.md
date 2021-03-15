@@ -24,7 +24,7 @@ Oh, and here's a great quote from this Wikipedia on
 You can also write code blocks here!
 
 ```js
-const saltyDuckEgg = "chinese preserved food product"
+const saltyDuckEgg = "chinese preserved food product";
 ```
 
 | Number | Title                                    | Year |
@@ -108,38 +108,38 @@ This is a paragraph.
     >
     >     Markdown.generate();
 
-- Red
-- Green
-- Blue
+-   Red
+-   Green
+-   Blue
 
-* Red
-* Green
-* Blue
+*   Red
+*   Green
+*   Blue
 
-- Red
-- Green
-- Blue
+-   Red
+-   Green
+-   Blue
 
 ```markdown
-- Red
-- Green
-- Blue
+-   Red
+-   Green
+-   Blue
 
-* Red
-* Green
-* Blue
+*   Red
+*   Green
+*   Blue
 
-- Red
-- Green
-- Blue
+-   Red
+-   Green
+-   Blue
 ```
 
-- `code goes` here in this line
-- **bold** goes here
+-   `code goes` here in this line
+-   **bold** goes here
 
 ```markdown
-- `code goes` here in this line
-- **bold** goes here
+-   `code goes` here in this line
+-   **bold** goes here
 ```
 
 1. Buy flour and salt
