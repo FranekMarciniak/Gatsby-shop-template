@@ -1,0 +1,20 @@
+{
+	"compilerOptions": {
+		"jsx": "react",
+		"module": "commonjs",
+		"moduleResolution": "node",
+		"noImplicitAny": false,
+		"noImplicitThis": true,
+		"strictNullChecks": true,
+		"target": "ES6",
+		"declaration": true,
+		"esModuleInterop": true,
+		"lib": ["dom"],
+		"outDir": "lib",
+		"checkJs": true,
+		"allowJs": true,
+		"declarationDir": "@types",
+		"sourceMap": true
+	},
+	"include": ["src/**/*"]
+}

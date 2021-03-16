@@ -1,15 +1,11 @@
 module.exports = {
 	siteMetadata: {
-		title: `Gatsby Starter Blog`,
+		title: `Er template`,
 		author: {
-			name: `Kyle Mathews`,
-			summary: `who lives and works in San Francisco building useful things.`,
+			name: `Franciszek Marciniak`,
 		},
-		description: `A starter blog demonstrating what Gatsby can do.`,
-		siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
-		social: {
-			twitter: `kylemathews`,
-		},
+		description: `A starter for building ecommerce sites with blog`,
+		siteUrl: `http://localhost:8000/`,
 	},
 	plugins: [
 		`gatsby-plugin-image`,
@@ -58,68 +54,10 @@ module.exports = {
 		//   },
 		// },
 		{
-			resolve: `gatsby-plugin-feed`,
-			options: {
-				query: `
-          {
-            site {
-              siteMetadata {
-                title
-                description
-                siteUrl
-                site_url: siteUrl
-              }
-            }
-          }
-        `,
-				feeds: [
-					{
-						serialize: ({ query: { site, allMarkdownRemark } }) => {
-							return allMarkdownRemark.nodes.map((node) => {
-								return Object.assign({}, node.frontmatter, {
-									description: node.excerpt,
-									date: node.frontmatter.date,
-									url:
-										site.siteMetadata.siteUrl +
-										node.fields.slug,
-									guid:
-										site.siteMetadata.siteUrl +
-										node.fields.slug,
-									custom_elements: [
-										{ "content:encoded": node.html },
-									],
-								});
-							});
-						},
-						query: `
-              {
-                allMarkdownRemark(
-                  sort: { order: DESC, fields: [frontmatter___date] },
-                ) {
-                  nodes {
-                    excerpt
-                    html
-                    fields {
-                      slug
-                    }
-                    frontmatter {
-                      title
-                      date
-                    }
-                  }
-                }
-              }
-            `,
-						output: "/rss.xml",
-					},
-				],
-			},
-		},
-		{
 			resolve: `gatsby-plugin-manifest`,
 			options: {
-				name: `Gatsby Starter Blog`,
-				short_name: `GatsbyJS`,
+				name: `Gatsby Starter Ecommerce`,
+				short_name: `ERTemplate`,
 				start_url: `/`,
 				background_color: `#ffffff`,
 				theme_color: `#663399`,
@@ -129,6 +67,7 @@ module.exports = {
 		},
 		`gatsby-plugin-react-helmet`,
 		`gatsby-plugin-gatsby-cloud`,
+		`gatsby-plugin-styled-components`,
 		// this (optional) plugin enables Progressive Web App + Offline functionality
 		// To learn more, visit: https://gatsby.dev/offline
 		// `gatsby-plugin-offline`,
