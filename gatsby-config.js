@@ -1,6 +1,6 @@
 module.exports = {
 	siteMetadata: {
-		title: `Er template`,
+		title: `ExamesRush`,
 		author: {
 			name: `Franciszek Marciniak`,
 		},
@@ -57,12 +57,12 @@ module.exports = {
 			resolve: `gatsby-plugin-manifest`,
 			options: {
 				name: `Gatsby Starter Ecommerce`,
-				short_name: `ERTemplate`,
+				short_name: `ExamesRush`,
 				start_url: `/`,
 				background_color: `#ffffff`,
 				theme_color: `#663399`,
 				display: `minimal-ui`,
-				icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+				icon: `src/images/site-icon.png`, // This path is relative to the root of the site.
 			},
 		},
 		`gatsby-plugin-react-helmet`,
