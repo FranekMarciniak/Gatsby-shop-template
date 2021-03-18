@@ -12,6 +12,9 @@ export const DropdownContent = styled.ul`
 	text-indent: 0;
 	box-shadow: 0 4px 10px -2px rgba(0, 0, 0, 0.1);
 	border: 1px solid #eaeaea;
+	* {
+		text-align: left !important;
+	}
 `;
 
 export const DropdownButton = styled.a`
