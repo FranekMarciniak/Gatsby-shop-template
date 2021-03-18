@@ -5,7 +5,7 @@ export const Section = styled.section`
 	margin-top: 50px;
 `;
 export const SectionInnerWrapper = styled.div`
-	max-width: 1220px;
+	max-width: 1300px;
 	margin: 0 auto;
 	display: flex;
 	justify-content: space-between;

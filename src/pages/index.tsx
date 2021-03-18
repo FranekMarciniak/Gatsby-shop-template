@@ -4,11 +4,13 @@ import { Link, graphql } from "gatsby";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Hero from "../components/Hero";
+import Bestsellers from "../components/Bestsellers";
 const Index = ({ location }) => {
 	return (
 		<Layout>
 			<SEO title="Home" />
 			<Hero />
+			<Bestsellers />
 		</Layout>
 	);
 };

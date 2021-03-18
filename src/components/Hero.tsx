@@ -4,7 +4,7 @@ import {
 	Section,
 	SectionInnerWrapper,
 	TextContentWrapper,
-} from "../styles/styled-components/Hero";
+} from "../styles/styled-components/hero";
 import { ButtonLink } from "../styles/styled-components/button";
 import { StaticImage } from "gatsby-plugin-image";
 

@@ -9,4 +9,6 @@ html {
 	--e-global-color-8BC34A: #8bc34a;
 	--e-global-color-38afa795: #000;
 	--e-global-color-17cbfb7b: #fff;
+	font-family: "Open Sans", sans-serif;
+	height: 300vh;
 }
