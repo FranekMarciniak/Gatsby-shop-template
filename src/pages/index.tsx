@@ -3,12 +3,12 @@ import { Link, graphql } from "gatsby";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-
+import Hero from "../components/Hero";
 const Index = ({ location }) => {
 	return (
 		<Layout>
 			<SEO title="Home" />
-			<h1>heello world</h1>
+			<Hero />
 		</Layout>
 	);
 };

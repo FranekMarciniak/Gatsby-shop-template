@@ -1,10 +1,11 @@
 import styled from "styled-components";
 import burgersvg from "../../images/menu-burger.svg";
+import closesvg from "../../images/close.svg";
 export const HeaderInnerWrapper = styled.div`
 	max-width: 1220px;
 	height: 4em;
 	margin: 0 auto;
-	padding: 1em 0 0 0;
+	padding: 1em 0 1em 0;
 	background-color: #fff;
 	display: flex;
 	justify-content: space-between;
@@ -29,21 +30,29 @@ export const Header = styled.header`
 		color: var(--e-global-color-accent);
 	}
 	@media (max-width: 920px) {
-		border-bottom: none;
+		border-bottom: 1px solid #eaeaea;
 	}
 `;
 export const Nav = styled.nav`
 	display: block;
+	width: 48%;
+	display: flex;
+	justify-content: flex-start;
 	@media (max-width: 920px) {
 		display: none;
 	}
 `;
 export const Ul = styled.ul`
 	display: flex;
+	padding-left: 0;
+	li:first-child {
+		padding-left: 0;
+	}
 `;
 export const ListItem = styled.li`
 	list-style: none;
 	padding: 0 1em;
+	text-align: center;
 `;
 
 export const MobileNav = styled.nav`
@@ -63,12 +72,13 @@ export const MobileNavUl = styled.ul`
 export const BurgerButton = styled.button`
 	width: 40px;
 	height: 40px;
-	padding: 0.4em 0.5em 0 0.5em;
+	padding: 0em 0.5em 0 0.5em;
 	background-color: var(--e-global-color-8BC34A);
 	border: none;
 	cursor: pointer;
 	border-radius: 0.1em;
-	background-image: url(${burgersvg});
+	background-image: url(${(props) =>
+		props.burgerIcon ? closesvg : burgersvg});
 	background-origin: content-box;
 	background-size: contain;
 	background-position: center;

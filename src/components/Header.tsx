@@ -57,7 +57,7 @@ function HeaderComponent(): ReactElement {
 					width={155}
 					height={26}
 				></StaticImage>
-
+				{/* Nav for the desktop site */}
 				<Nav>
 					<Ul>
 						{navigation.map((ele, i) => (
@@ -65,6 +65,7 @@ function HeaderComponent(): ReactElement {
 								{!ele.dropdown ? (
 									<Link to={ele.path}>{ele.name}</Link>
 								) : (
+									/*Whenever this button is hovered the dropdown will open */
 									<DropdownButton href="#">
 										{ele.name}
 										<DropdownContent>
@@ -80,6 +81,7 @@ function HeaderComponent(): ReactElement {
 								)}
 							</ListItem>
 						))}
+						{/*Here will be a cart component in the future */}
 						<ListItem>
 							<Link to={"/cart"}>CART</Link>
 						</ListItem>
@@ -89,8 +91,10 @@ function HeaderComponent(): ReactElement {
 					onClick={() => setNav(!nav)}
 					open={nav}
 					aria-label="show dropdown menu"
+					burgerIcon={nav}
 				></BurgerButton>
 			</HeaderInnerWrapper>
+			{/* Nav for the mobile site */}
 			<MobileNav>
 				<MobileNavUl>
 					{nav
