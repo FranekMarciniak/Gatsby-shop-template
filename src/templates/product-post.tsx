@@ -4,10 +4,9 @@ import { Link, graphql } from "gatsby";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 
-const BlogPostTemplate = ({ data, location, pageContext }) => {
+const ProductTemplate = ({ data, location, pageContext }) => {
 	const post = data.mdx;
 	const siteTitle = data.site.siteMetadata.title;
-
 	return (
 		<Layout>
 			<SEO
@@ -42,7 +41,7 @@ const BlogPostTemplate = ({ data, location, pageContext }) => {
 					<li>
 						{pageContext.previous && (
 							<Link
-								to={pageContext.previous.fields.slug}
+								to={pageContext.previous.frontmatter.path}
 								rel="prev"
 							>
 								← {pageContext.previous.frontmatter.title}
@@ -53,7 +52,10 @@ const BlogPostTemplate = ({ data, location, pageContext }) => {
 						{console.log(pageContext)}
 
 						{pageContext.next && (
-							<Link to={pageContext.next.fields.slug} rel="next">
+							<Link
+								to={pageContext.next.frontmatter.path}
+								rel="next"
+							>
 								{pageContext.next.frontmatter.title} →
 							</Link>
 						)}
@@ -64,7 +66,7 @@ const BlogPostTemplate = ({ data, location, pageContext }) => {
 	);
 };
 
-export default BlogPostTemplate;
+export default ProductTemplate;
 
 export const pageQuery = graphql`
 	query($slug: String!) {
@@ -79,6 +81,7 @@ export const pageQuery = graphql`
 			frontmatter {
 				title
 				date(formatString: "MMMM DD, YYYY")
+				path
 			}
 			body
 			slug

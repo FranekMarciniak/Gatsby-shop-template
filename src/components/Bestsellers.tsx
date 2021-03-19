@@ -44,7 +44,6 @@ function Bestsellers(): ReactElement {
 			}
 		`
 	);
-	console.log(allMdx.nodes);
 	return (
 		<Section>
 			<SectionInnerWrapper>

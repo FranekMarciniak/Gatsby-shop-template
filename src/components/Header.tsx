@@ -106,10 +106,9 @@ function HeaderComponent(): ReactElement {
 										<>
 											<NestedDropdownButton
 												href="#"
-												onClick={() => (
-													setDropdown(!dropdown),
-													console.log(dropdown)
-												)}
+												onClick={() =>
+													setDropdown(!dropdown)
+												}
 											>
 												{ele.name}
 											</NestedDropdownButton>
