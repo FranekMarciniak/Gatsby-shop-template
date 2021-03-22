@@ -1,11 +1,15 @@
 const path = require(`path`);
 const { createFilePath } = require(`gatsby-source-filesystem`);
-
+const { paginate } = require("gatsby-awesome-pagination");
 exports.createPages = async ({ graphql, actions }) => {
 	const { createPage } = actions;
 
 	const blogPost = path.resolve(`./src/templates/blog-post.tsx`);
 	const productPost = path.resolve(`./src/templates/product-post.tsx`);
+	const categorizedProductsPage = path.resolve(
+		`./src/templates/categorized-products-page.tsx`
+	);
+	const productsPage = path.resolve(`./src/templates/products-page.tsx`);
 	const blog = await graphql(
 		`
 			{
@@ -100,6 +104,76 @@ exports.createPages = async ({ graphql, actions }) => {
 				},
 			});
 		});
+	});
+	const products = await graphql(
+		`
+			{
+				allMdx(
+					filter: {
+						fileAbsolutePath: { regex: "/content/products/" }
+					}
+				) {
+					nodes {
+						frontmatter {
+							title
+						}
+					}
+				}
+			}
+		`
+	).then((result) => {
+		if (result.errors) {
+			throw result.errors;
+		}
+		// Create blog posts pages.
+		// const posts = result.data.allMdx.groups;
+		paginate({
+			createPage,
+			items: result.data.allMdx.nodes,
+			itemsPerPage: 9,
+			pathPrefix: "libary", // use category name for pages
+			component: productsPage,
+		});
+	});
+	const groupedProducts = await graphql(
+		`
+			{
+				allMdx(
+					filter: {
+						fileAbsolutePath: { regex: "/content/products/" }
+					}
+				) {
+					group(field: frontmatter___category) {
+						nodes {
+							frontmatter {
+								category
+							}
+						}
+						fieldValue
+					}
+				}
+			}
+		`
+	).then((result) => {
+		if (result.errors) {
+			throw result.errors;
+		}
+		// Create blog posts pages.
+		// const posts = result.data.allMdx.groups;
+
+		result.data.allMdx.group.forEach(
+			({ nodes: posts, fieldValue: category }) => {
+				console.log(posts);
+				paginate({
+					createPage,
+					items: posts,
+					itemsPerPage: 9,
+					pathPrefix: category, // use category name for pages
+					component: categorizedProductsPage,
+					context: { category }, // your template for post lists
+				});
+			}
+		);
 	});
 };
 

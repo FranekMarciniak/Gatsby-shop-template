@@ -5,12 +5,14 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Hero from "../components/Hero";
 import Bestsellers from "../components/Bestsellers";
+import BestPosts from "../components/BestPosts";
 const Index = ({ location }) => {
 	return (
 		<Layout>
 			<SEO title="Home" />
 			<Hero />
 			<Bestsellers />
+			<BestPosts />
 		</Layout>
 	);
 };

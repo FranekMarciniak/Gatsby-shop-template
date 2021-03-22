@@ -69,8 +69,8 @@ function HeaderComponent(): ReactElement {
 									<DropdownButton href="#">
 										{ele.name}
 										<DropdownContent>
-											{ele.dropdown.map((element) => (
-												<DropdownLi>
+											{ele.dropdown.map((element, i) => (
+												<DropdownLi key={i}>
 													<Link to={element.path}>
 														{element.name}
 													</Link>
@@ -113,8 +113,11 @@ function HeaderComponent(): ReactElement {
 												{ele.name}
 											</NestedDropdownButton>
 											{dropdown
-												? ele.dropdown.map((ele) => (
-														<NestedDropdownLi as="div">
+												? ele.dropdown.map((ele, i) => (
+														<NestedDropdownLi
+															as="div"
+															key={i}
+														>
 															<Link to={ele.path}>
 																{ele.name}
 															</Link>

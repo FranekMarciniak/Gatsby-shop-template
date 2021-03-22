@@ -18,6 +18,14 @@ export const ProductCardBestseller = styled(ProductCard)`
 		margin-top: 15px;
 	}
 `;
+export const ProductCardLibary = styled(ProductCard)`
+	width: calc(33% - 15px);
+	@media (max-width: 920px) {
+		width: calc(50% - 15px);
+		max-width: 310px;
+		margin-top: 15px;
+	}
+`;
 export const ProductCardSubheader = styled.p`
 	opacity: 0.6;
 	padding-top: 5px;
