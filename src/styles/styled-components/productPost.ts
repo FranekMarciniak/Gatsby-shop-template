@@ -16,11 +16,12 @@ export const Article = styled.article`
 	background-color: #fff;
 	flex-wrap: wrap;
 	@media (max-width: 920px) {
+		display: flex;
+		justify-content: center;
 	}
 `;
 export const ImagesWrapper = styled.div`
 	width: 48%;
-	height: 600px;
 	padding: 15px 2% 15px 0px;
 	box-sizing: content-box;
 	ul {
@@ -43,16 +44,25 @@ export const ImagesWrapper = styled.div`
 			max-width: 130px;
 		}
 	}
+	@media (max-width: 920px) {
+		width: 90%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: flex-start;
+	}
 `;
 export const ProductInfoWrapper = styled.div`
 	width: 48%;
-	height: 600px;
 	padding: 15px 0px 15px 2%;
 	box-sizing: content-box;
 	background-color: #fff;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
+	@media (max-width: 920px) {
+		width: 90%;
+	}
 `;
 export const ProductNav = styled.nav`
 	width: 100%;
