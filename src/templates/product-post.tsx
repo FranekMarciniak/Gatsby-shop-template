@@ -118,10 +118,7 @@ const ProductTemplate = ({ data, location, pageContext }) => {
 							className="snipcart-add-item"
 							data-item-id={post.frontmatter.id}
 							data-item-price={post.frontmatter.price}
-							data-item-url={
-								"https://blissful-sammet-8733e1.netlify.app" +
-								location.pathname
-							}
+							data-item-url={location.pathname}
 							data-item-name={post.frontmatter.title}
 						>
 							Add to cart
