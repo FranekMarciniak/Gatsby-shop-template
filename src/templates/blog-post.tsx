@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Link, graphql } from "gatsby";
-
+import { MDXRenderer } from "gatsby-plugin-mdx";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 
@@ -14,52 +14,13 @@ const BlogPostTemplate = ({ data, location, pageContext }) => {
 				description={post.frontmatter.description || post.excerpt}
 				title="Blog post"
 			/>
-			<article
-				className="blog-post"
-				itemScope
-				itemType="http://schema.org/Article"
-			>
+			<article className="blog-post">
 				<header>
 					<h1 itemProp="headline">{post.frontmatter.title}</h1>
 					<p>{post.frontmatter.date}</p>
 				</header>
-				<section
-					dangerouslySetInnerHTML={{ __html: post.html }}
-					itemProp="articleBody"
-				/>
-				<hr />
+				<MDXRenderer>{post.body}</MDXRenderer>
 			</article>
-			<nav className="blog-post-nav">
-				<ul
-					style={{
-						display: `flex`,
-						flexWrap: `wrap`,
-						justifyContent: `space-between`,
-						listStyle: `none`,
-						padding: 0,
-					}}
-				>
-					<li>
-						{pageContext.previous && (
-							<Link
-								to={pageContext.previous.fields.slug}
-								rel="prev"
-							>
-								← {pageContext.previous.frontmatter.title}
-							</Link>
-						)}
-					</li>
-					<li>
-						{pageContext}
-
-						{pageContext.next && (
-							<Link to={pageContext.next.fields.slug} rel="next">
-								{pageContext.next.frontmatter.title} →
-							</Link>
-						)}
-					</li>
-				</ul>
-			</nav>
 		</Layout>
 	);
 };

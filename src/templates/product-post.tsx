@@ -111,7 +111,15 @@ const ProductTemplate = ({ data, location, pageContext }) => {
 							<strong>{post.frontmatter.price}$</strong>
 						</p>
 						<p>{post.frontmatter.short}</p>
-						<Button>Add to cart</Button>
+						<Button
+							class="snipcart-add-item"
+							data-item-id={post.frontmatter.id}
+							data-item-price={post.frontmatter.price}
+							data-item-url="/"
+							data-item-name={post.frontmatter.title}
+						>
+							Add to cart
+						</Button>
 					</ProductInfoWrapper>
 					<SectionBody>
 						<MDXRenderer>{post.body}</MDXRenderer>
@@ -140,6 +148,7 @@ export const pageQuery = graphql`
 				price
 				short
 				category
+				id
 				main_image {
 					childImageSharp {
 						gatsbyImageData(placeholder: BLURRED)
