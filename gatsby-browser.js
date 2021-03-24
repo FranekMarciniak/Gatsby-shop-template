@@ -5,4 +5,4 @@ import "typeface-merriweather";
 import "./src/styles/normalize.css";
 // custom CSS styles
 import "./src/styles/globalStyles.css";
-import "./src/styles/cart.css";
+// import "./src/styles/cart.css";
