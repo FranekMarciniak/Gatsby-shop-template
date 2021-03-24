@@ -11,10 +11,14 @@ import {
 	ProductCardSubheader,
 } from "../styles/styled-components/product-card";
 import { GatsbyImage, getImage, IGatsbyImageData } from "gatsby-plugin-image";
+import {
+	ButtonLinkCircle,
+	ButtonLinkSquare,
+} from "../styles/styled-components/button";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 const PageTemplate = ({ data, location, pageContext }) => {
 	// const post = data.mdx;
 	const { allMdx } = data;
-
 	return (
 		<Layout>
 			<SEO description="Products page" title="Products page" />
@@ -40,6 +44,23 @@ const PageTemplate = ({ data, location, pageContext }) => {
 						</ProductCardPrice>
 					</ProductCardLibary>
 				))}
+				{pageContext.previousPagePath && (
+					<ButtonLinkSquare
+						to={"/" + pageContext.previousPagePath}
+						rel="prev"
+					>
+						<FaChevronLeft />
+					</ButtonLinkSquare>
+				)}
+
+				{pageContext.nextPagePath && (
+					<ButtonLinkSquare
+						to={"/" + pageContext.nextPagePath}
+						rel="next"
+					>
+						<FaChevronRight />
+					</ButtonLinkSquare>
+				)}
 			</ProductsLayout>
 		</Layout>
 	);

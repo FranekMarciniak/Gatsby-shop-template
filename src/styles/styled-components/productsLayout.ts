@@ -1,5 +1,8 @@
 import styled from "styled-components";
-
+export const OuterWrapper = styled.div`
+	width: 100%;
+	background-color: #f8f6f3;
+`;
 export const Section = styled.section`
 	max-width: 1300px;
 	margin: 0 auto;

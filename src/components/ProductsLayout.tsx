@@ -1,5 +1,6 @@
 import React, { ReactElement, useState } from "react";
 import {
+	OuterWrapper,
 	Section,
 	InnerWrapper,
 	FilteringWrapper,
@@ -53,17 +54,19 @@ function ProductsLayout({ children }): ReactElement {
 				</ul>
 			</Sidebar>
 			<Background open={open} onClick={() => setOpen(false)} />
-			<Section>
-				<InnerWrapper>
-					<FilteringWrapper>
-						<Button onClick={() => setOpen(true)}>
-							<FiMenu />
-							filter
-						</Button>
-					</FilteringWrapper>
-					<ProductsWrapper>{children}</ProductsWrapper>
-				</InnerWrapper>
-			</Section>
+			<OuterWrapper>
+				<Section>
+					<InnerWrapper>
+						<FilteringWrapper>
+							<Button onClick={() => setOpen(true)}>
+								<FiMenu />
+								filter
+							</Button>
+						</FilteringWrapper>
+						<ProductsWrapper>{children}</ProductsWrapper>
+					</InnerWrapper>
+				</Section>
+			</OuterWrapper>
 		</>
 	);
 }

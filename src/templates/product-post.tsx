@@ -15,8 +15,17 @@ import {
 	PrevAndNext,
 } from "../styles/styled-components/productPost";
 import { Button, ButtonLinkCircle } from "../styles/styled-components/button";
+import {
+	ProductCardBestseller,
+	ProductCardHeader,
+	ProductCardPrice,
+	ProductCardSubheader,
+} from "../styles/styled-components/product-card";
 import { GatsbyImage, getImage, IGatsbyImageData } from "gatsby-plugin-image";
-
+import {
+	Section,
+	SectionInnerWrapper,
+} from "../styles/styled-components/relatedProducts";
 const ProductTemplate = ({ data, location, pageContext }) => {
 	const post = data.mdx;
 	const related = data.allMdx.nodes;
@@ -29,9 +38,7 @@ const ProductTemplate = ({ data, location, pageContext }) => {
 			getImage(ele.childrenImageSharp[0].gatsbyImageData)
 		),
 	];
-	console.log(
-		"https://blissful-sammet-8733e1.netlify.app" + location.pathname
-	);
+
 	return (
 		<Layout>
 			<SEO
@@ -127,6 +134,39 @@ const ProductTemplate = ({ data, location, pageContext }) => {
 					<SectionBody>
 						<MDXRenderer>{post.body}</MDXRenderer>
 					</SectionBody>
+					<Section>
+						<SectionInnerWrapper>
+							{console.log(related)}
+							{related.map((ele, i) => (
+								<ProductCardBestseller key={i}>
+									<GatsbyImage
+										image={
+											getImage(
+												ele.frontmatter.main_image
+											) as IGatsbyImageData
+										}
+										alt="product"
+									></GatsbyImage>
+									<ProductCardSubheader>
+										Best seller
+									</ProductCardSubheader>
+									<ProductCardHeader>
+										<Link
+											to={
+												"/libary/product" +
+												ele.frontmatter.path
+											}
+										>
+											{ele.frontmatter.title}
+										</Link>
+									</ProductCardHeader>
+									<ProductCardPrice>
+										{ele.frontmatter.price}$
+									</ProductCardPrice>
+								</ProductCardBestseller>
+							))}
+						</SectionInnerWrapper>
+					</Section>
 				</Article>
 			</OuterWrapper>
 		</Layout>

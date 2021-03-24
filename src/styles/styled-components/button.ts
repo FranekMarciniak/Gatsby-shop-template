@@ -66,3 +66,24 @@ export const ButtonLinkCircle = styled(Link)`
 		}
 	}
 `;
+export const ButtonLinkSquare = styled(Link)`
+	background-color: #fff;
+	padding: 8px;
+	display: inline-block;
+	margin: 0 5px;
+	border: #8bc34a solid 1px;
+	color: #fff;
+	text-decoration: none;
+	transition: all 0.3s;
+	svg {
+		color: #8bc34a;
+	}
+	&:hover {
+		background-color: #7baf42;
+		transition: all 0.3s;
+		svg {
+			color: #fff;
+			transition: all 0.3s;
+		}
+	}
+`;

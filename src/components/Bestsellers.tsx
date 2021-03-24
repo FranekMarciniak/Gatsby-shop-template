@@ -46,6 +46,7 @@ function Bestsellers(): ReactElement {
 	);
 	return (
 		<Section>
+			<h2>Produtos Best-Sellers</h2>
 			<SectionInnerWrapper>
 				{allMdx.nodes.map((ele, i) => (
 					<ProductCardBestseller key={i}>
