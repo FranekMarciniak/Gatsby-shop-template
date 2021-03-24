@@ -112,7 +112,7 @@ const ProductTemplate = ({ data, location, pageContext }) => {
 						</p>
 						<p>{post.frontmatter.short}</p>
 						<Button
-							class="snipcart-add-item"
+							className="snipcart-add-item"
 							data-item-id={post.frontmatter.id}
 							data-item-price={post.frontmatter.price}
 							data-item-url="/"
