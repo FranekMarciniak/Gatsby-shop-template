@@ -44,7 +44,9 @@ function ProductsLayout({ children }): ReactElement {
 				<ul>
 					{Object.entries(reduced).map((ele, i) => (
 						<li key={i}>
-							<Link to={"/" + ele[0]}>{ele[0]}</Link>
+							<Link to={"/libary/category/" + ele[0]}>
+								{ele[0]}
+							</Link>
 							<span>({ele[1] as string})</span>
 						</li>
 					))}

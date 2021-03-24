@@ -28,9 +28,10 @@ const PageTemplate = ({ data, location, pageContext }) => {
 							}
 							alt="product"
 						></GatsbyImage>
+
 						<ProductCardSubheader>Best seller</ProductCardSubheader>
 						<ProductCardHeader>
-							<Link to={ele.frontmatter.path}>
+							<Link to={"/libary/product" + ele.frontmatter.path}>
 								{ele.frontmatter.title}
 							</Link>
 						</ProductCardHeader>

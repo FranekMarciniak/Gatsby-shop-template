@@ -50,7 +50,7 @@ const BlogPostTemplate = ({ data, location, pageContext }) => {
 						)}
 					</li>
 					<li>
-						{console.log(pageContext)}
+						{pageContext}
 
 						{pageContext.next && (
 							<Link to={pageContext.next.fields.slug} rel="next">

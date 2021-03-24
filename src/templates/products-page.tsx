@@ -17,6 +17,7 @@ const PageTemplate = ({ data, location, pageContext }) => {
 
 	return (
 		<Layout>
+			<SEO description="Products page" title="Products page" />
 			<ProductsLayout>
 				{allMdx.nodes.map((ele, i) => (
 					<ProductCardLibary key={i}>
@@ -30,7 +31,7 @@ const PageTemplate = ({ data, location, pageContext }) => {
 						></GatsbyImage>
 						<ProductCardSubheader>Best seller</ProductCardSubheader>
 						<ProductCardHeader>
-							<Link to={ele.frontmatter.path}>
+							<Link to={"/libary/product" + ele.frontmatter.path}>
 								{ele.frontmatter.title}
 							</Link>
 						</ProductCardHeader>
@@ -62,7 +63,7 @@ export const pageQuery = graphql`
 					price
 					main_image {
 						childImageSharp {
-							gatsbyImageData(width: 310)
+							gatsbyImageData
 						}
 					}
 					path

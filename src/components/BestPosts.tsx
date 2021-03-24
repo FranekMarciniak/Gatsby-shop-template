@@ -32,7 +32,7 @@ function BestPosts(): ReactElement {
 			}
 		`
 	);
-	console.log(allMdx);
+	allMdx;
 	return (
 		<Section>
 			<SectionInnerWrapper>

@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { Link } from "gatsby";
-
 export const ButtonLink = styled(Link)`
 	padding: 15px 35px;
 	background-color: var(--e-global-color-8BC34A);
@@ -43,5 +42,27 @@ export const ButtonLinkArrow = styled(ButtonLink)`
 	align-items: center;
 	svg {
 		padding-left: 6px;
+	}
+`;
+export const ButtonLinkCircle = styled(Link)`
+	background-color: #fff;
+	padding: 8px;
+	display: inline-block;
+	margin: 0 5px;
+	border: #8bc34a solid 1px;
+	border-radius: 50%;
+	color: #fff;
+	text-decoration: none;
+	transition: all 0.3s;
+	svg {
+		color: #8bc34a;
+	}
+	&:hover {
+		background-color: #7baf42;
+		transition: all 0.3s;
+		svg {
+			color: #fff;
+			transition: all 0.3s;
+		}
 	}
 `;
