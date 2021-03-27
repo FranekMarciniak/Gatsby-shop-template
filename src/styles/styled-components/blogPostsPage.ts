@@ -15,6 +15,11 @@ export const BlogPost = styled.article`
 	margin: 0 auto;
 	width: 100%;
 	display: flex;
+	align-items: center;
+	justify-content: center;
+	@media (max-width: 720px) {
+		flex-direction: column;
+	}
 `;
 
 export const ImageWrapper = styled.div`
@@ -22,9 +27,14 @@ export const ImageWrapper = styled.div`
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	margin: 0 auto;
+
 	padding: 15px;
 	div {
 		max-height: 320px;
+	}
+	@media (max-width: 720px) {
+		width: 90%;
 	}
 `;
 export const TextWrapper = styled.div`
@@ -37,5 +47,11 @@ export const TextWrapper = styled.div`
 		color: #3a3a3a;
 		font-size: 1.6em;
 		font-weight: 400;
+	}
+	@media (max-width: 720px) {
+		width: 90%;
+		p {
+			text-align: center;
+		}
 	}
 `;
