@@ -30,7 +30,7 @@ export const ProductCardSubheader = styled.p`
 	opacity: 0.6;
 	padding-top: 5px;
 `;
-export const ProductCardHeader = styled.h2`
+export const ProductCardHeader = styled.h3`
 	font-size: 1.3em;
 	a {
 		text-decoration: none;

@@ -3,24 +3,36 @@ import { Link, graphql } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-
+import {
+	ArticleWrapper,
+	Article,
+	Header,
+	HeaderInnerWrapper,
+} from "../styles/styled-components/blogPost";
 const BlogPostTemplate = ({ data, location, pageContext }) => {
 	const post = data.mdx;
 	const siteTitle = data.site.siteMetadata.title;
-
+	console.log(post.frontmatter.description);
 	return (
-		<Layout>
+		<Layout color="white">
 			<SEO
 				description={post.frontmatter.description || post.excerpt}
 				title="Blog post"
 			/>
-			<article className="blog-post">
-				<header>
-					<h1 itemProp="headline">{post.frontmatter.title}</h1>
-					<p>{post.frontmatter.date}</p>
-				</header>
-				<MDXRenderer>{post.body}</MDXRenderer>
-			</article>
+			<ArticleWrapper>
+				<Header>
+					<HeaderInnerWrapper>
+						<span>{post.frontmatter.description}</span>
+						<h1>{post.frontmatter.title}</h1>
+						<p>{post.frontmatter.shortPost}</p>
+					</HeaderInnerWrapper>
+				</Header>
+				<Article>
+					<MDXRenderer style={{ width: "800px" }}>
+						{post.body}
+					</MDXRenderer>
+				</Article>
+			</ArticleWrapper>
 		</Layout>
 	);
 };
@@ -40,6 +52,8 @@ export const pageQuery = graphql`
 			frontmatter {
 				title
 				date(formatString: "MMMM DD, YYYY")
+				description
+				shortPost
 			}
 			body
 			slug

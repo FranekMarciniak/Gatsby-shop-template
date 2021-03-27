@@ -5,6 +5,7 @@ exports.createPages = async ({ graphql, actions }) => {
 	const { createPage } = actions;
 
 	const blogPost = path.resolve(`./src/templates/blog-post.tsx`);
+	const blogPage = path.resolve(`./src/templates/blog-page.tsx`);
 	const productPost = path.resolve(`./src/templates/product-post.tsx`);
 	const categorizedProductsPage = path.resolve(
 		`./src/templates/categorized-products-page.tsx`
@@ -26,6 +27,7 @@ exports.createPages = async ({ graphql, actions }) => {
 							}
 							frontmatter {
 								title
+								description
 							}
 							body
 						}
@@ -54,6 +56,34 @@ exports.createPages = async ({ graphql, actions }) => {
 					next,
 				},
 			});
+		});
+	});
+	const blogPostsPage = await graphql(
+		`
+			{
+				allMdx(
+					filter: { fileAbsolutePath: { regex: "/content/blog/" } }
+				) {
+					nodes {
+						frontmatter {
+							title
+						}
+					}
+				}
+			}
+		`
+	).then((result) => {
+		if (result.errors) {
+			throw result.errors;
+		}
+		// Create blog posts pages.
+		// const posts = result.data.allMdx.groups;
+		paginate({
+			createPage,
+			items: result.data.allMdx.nodes,
+			itemsPerPage: 6,
+			pathPrefix: "blog",
+			component: blogPage,
 		});
 	});
 	const product = await graphql(

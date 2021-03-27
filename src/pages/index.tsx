@@ -8,7 +8,7 @@ import Bestsellers from "../components/Bestsellers";
 import BestPosts from "../components/BestPosts";
 const Index = ({ location }) => {
 	return (
-		<Layout>
+		<Layout color="white">
 			<SEO title="Home" />
 			<Hero />
 			<Bestsellers />

@@ -6,7 +6,13 @@ export const Section = styled.section`
 	padding: 100px 0;
 	display: flex;
 	justify-content: center;
-	align-items: flex-start;
+	align-items: center;
+	flex-direction: column;
+	h2 {
+		font-size: 2.2em;
+		font-weight: 600;
+		margin-top: 0;
+	}
 `;
 export const SectionInnerWrapper = styled.div`
 	max-width: 1300px;
@@ -29,7 +35,7 @@ export const BlogPostCard = styled.article`
 	align-items: center;
 	flex-direction: column;
 	text-align: center;
-	height: 100%;
+	height: 400px;
 	h3 {
 		font-size: 1.5rem;
 	}

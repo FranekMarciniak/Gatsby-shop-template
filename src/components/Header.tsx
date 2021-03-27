@@ -16,16 +16,18 @@ import {
 	NestedDropdownLi,
 	NestedDropdownButton,
 } from "../styles/styled-components/dropdown";
+import { BsBagFill } from "react-icons/bs";
 import { StaticImage } from "gatsby-plugin-image";
 import { Link } from "gatsby";
 
-function HeaderComponent(): ReactElement {
+function HeaderComponent({ color }): ReactElement {
 	const [dropdown, setDropdown] = useState(false);
 	const [nav, setNav] = useState(false);
 	const navigation = [
 		{ name: "home", path: "/", active: false, dropdown: null },
 		{ name: "libary", path: "/libary", active: false, dropdown: null },
-		{ name: "about us", path: "/about", active: false, dropdown: null },
+		{ name: "blog", path: "/blog", active: false, dropdown: null },
+		// { name: "about us", path: "/about", active: false, dropdown: null },
 		{ name: "contact", path: "/contact", active: false, dropdown: null },
 		{
 			name: "account",
@@ -33,20 +35,29 @@ function HeaderComponent(): ReactElement {
 			active: false,
 			dropdown: [
 				{
+					name: "orders",
+					path: "#",
+					className: "snipcart-user-profile",
+					active: false,
+				},
+				{
 					name: "my account",
-					path: "/account",
+					className: "snipcart-edit-profile",
+					path: "#",
 					active: false,
 				},
 				{
 					name: "cart",
-					path: "/cart",
+					path: "#",
+					className: "snipcart-checkout",
 					active: false,
 				},
 			],
 		},
 	];
+	console.log(color);
 	return (
-		<Header>
+		<Header color={color}>
 			<HeaderInnerWrapper>
 				{/* logo for the header */}
 				<StaticImage
@@ -71,7 +82,14 @@ function HeaderComponent(): ReactElement {
 										<DropdownContent>
 											{ele.dropdown.map((element, i) => (
 												<DropdownLi key={i}>
-													<Link to={element.path}>
+													<Link
+														className={
+															element.className
+																? element.className
+																: ""
+														}
+														to={element.path}
+													>
 														{element.name}
 													</Link>
 												</DropdownLi>
@@ -83,7 +101,13 @@ function HeaderComponent(): ReactElement {
 						))}
 						{/*Here will be a cart component in the future */}
 						<ListItem>
-							<Link to={"/cart"}>CART</Link>
+							<div className="snipcart-summary">
+								<span className="snipcart-total-items"></span>
+
+								<a href="#" className="snipcart-checkout">
+									<BsBagFill />
+								</a>
+							</div>
 						</ListItem>
 					</Ul>
 				</Nav>
@@ -118,7 +142,14 @@ function HeaderComponent(): ReactElement {
 															as="div"
 															key={i}
 														>
-															<Link to={ele.path}>
+															<Link
+																className={
+																	ele.className
+																		? ele.className
+																		: ""
+																}
+																to={ele.path}
+															>
 																{ele.name}
 															</Link>
 														</NestedDropdownLi>

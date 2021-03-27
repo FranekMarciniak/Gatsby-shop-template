@@ -21,7 +21,7 @@ function BestPosts(): ReactElement {
 						fileAbsolutePath
 						frontmatter {
 							title
-							short
+							shortCard
 						}
 						fields {
 							slug
@@ -35,11 +35,12 @@ function BestPosts(): ReactElement {
 	allMdx;
 	return (
 		<Section>
+			<h2>Best blog posts</h2>
 			<SectionInnerWrapper>
 				{allMdx.nodes.map((ele, i) => (
 					<BlogPostCard key={i}>
 						<h3>{ele.frontmatter.title}</h3>
-						<p>{ele.frontmatter.short}</p>
+						<p>{ele.frontmatter.shortCard}</p>
 						<ButtonLinkArrow to={ele.fields.slug}>
 							See the post
 							<FaArrowRight

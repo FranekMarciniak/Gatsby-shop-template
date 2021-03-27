@@ -11,16 +11,13 @@ import {
 	ProductCardSubheader,
 } from "../styles/styled-components/product-card";
 import { GatsbyImage, getImage, IGatsbyImageData } from "gatsby-plugin-image";
-import {
-	ButtonLinkCircle,
-	ButtonLinkSquare,
-} from "../styles/styled-components/button";
+import { ButtonLinkSquare } from "../styles/styled-components/button";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 const PageTemplate = ({ data, location, pageContext }) => {
 	// const post = data.mdx;
 	const { allMdx } = data;
 	return (
-		<Layout>
+		<Layout color="white">
 			<SEO description="Products page" title="Products page" />
 			<ProductsLayout>
 				{allMdx.nodes.map((ele, i) => (

@@ -16,7 +16,7 @@ const PageTemplate = ({ data, location, pageContext }) => {
 	const { allMdx } = data;
 
 	return (
-		<Layout>
+		<Layout color="white">
 			<ProductsLayout>
 				{allMdx.nodes.map((ele, i) => (
 					<ProductCardLibary key={i}>

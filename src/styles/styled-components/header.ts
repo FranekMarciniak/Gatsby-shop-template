@@ -6,7 +6,6 @@ export const HeaderInnerWrapper = styled.div`
 	height: 4em;
 	margin: 0 auto;
 	padding: 1em 0 1em 0;
-	background-color: #fff;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -18,6 +17,8 @@ export const HeaderInnerWrapper = styled.div`
 export const Header = styled.header`
 	width: 100%;
 	border-bottom: 1px solid #eaeaea;
+	background-color: ${(props) =>
+		props.color === "white" ? "#fff" : "#F8F6F3"};
 	* {
 		color: var(--e-global-color-link-nav);
 		font-family: "Open Sans", sans-serif;
@@ -51,8 +52,25 @@ export const Ul = styled.ul`
 `;
 export const ListItem = styled.li`
 	list-style: none;
-	padding: 0 1em;
+	padding: 0 1.1em;
 	text-align: center;
+	a {
+		position: relative;
+	}
+	svg {
+		width: 1.4em;
+		height: 1.4em;
+		display: block;
+	}
+	svg:hover {
+		color: var(--e-global-color-accent);
+	}
+	span {
+		position: absolute;
+		top: 21px;
+		color: yellowgreen;
+		right: -5px;
+	}
 `;
 
 export const MobileNav = styled.nav`

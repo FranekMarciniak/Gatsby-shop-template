@@ -2,10 +2,12 @@ import styled from "styled-components";
 export const OuterWrapper = styled.div`
 	width: 100%;
 	background-color: #f8f6f3;
+	padding: 15px 0;
 `;
 export const Section = styled.section`
 	max-width: 1300px;
-	margin: 0 auto;
+	margin: 40px auto;
+	background-color: #fff;
 	@media (max-width: 920px) {
 		width: 90%;
 	}

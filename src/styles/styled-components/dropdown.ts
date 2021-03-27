@@ -10,6 +10,7 @@ export const DropdownContent = styled.ul`
 	margin-top: 22px;
 	padding: 0;
 	text-indent: 0;
+	z-index: 101;
 	box-shadow: 0 4px 10px -2px rgba(0, 0, 0, 0.1);
 	border: 1px solid #eaeaea;
 	* {

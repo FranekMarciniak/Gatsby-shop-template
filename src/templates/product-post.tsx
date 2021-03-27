@@ -40,7 +40,7 @@ const ProductTemplate = ({ data, location, pageContext }) => {
 	];
 
 	return (
-		<Layout>
+		<Layout color="white">
 			<SEO
 				description={post.frontmatter.description || post.excerpt}
 				title={post.frontmatter.title}
