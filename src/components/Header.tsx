@@ -25,7 +25,7 @@ function HeaderComponent({ color }): ReactElement {
 	const [nav, setNav] = useState(false);
 	const navigation = [
 		{ name: "home", path: "/", active: false, dropdown: null },
-		{ name: "libary", path: "/libary", active: false, dropdown: null },
+		{ name: "library", path: "/library", active: false, dropdown: null },
 		{ name: "blog", path: "/blog", active: false, dropdown: null },
 		// { name: "about us", path: "/about", active: false, dropdown: null },
 		{ name: "contact", path: "/contact", active: false, dropdown: null },
@@ -55,7 +55,6 @@ function HeaderComponent({ color }): ReactElement {
 			],
 		},
 	];
-	console.log(color);
 	return (
 		<Header color={color}>
 			<HeaderInnerWrapper>

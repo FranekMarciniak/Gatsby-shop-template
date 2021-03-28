@@ -12,14 +12,32 @@ export const ProductCard = styled.div`
 
 export const ProductCardBestseller = styled(ProductCard)`
 	width: calc(25% - 15px);
+	* {
+		text-decoration: none;
+		color: black;
+	}
+	p {
+		margin-top: 0;
+	}
 	@media (max-width: 920px) {
 		width: calc(50% - 15px);
 		max-width: 310px;
 		margin-top: 15px;
 	}
 `;
-export const ProductCardLibary = styled(ProductCard)`
+export const ProductCardLibrary = styled(ProductCard)`
 	width: calc(33% - 15px);
+	display: block;
+	* {
+		text-decoration: none;
+		color: black;
+	}
+	p {
+		margin-top: 0;
+	}
+	a {
+		z-index: 5;
+	}
 	@media (max-width: 920px) {
 		width: calc(50% - 15px);
 		max-width: 310px;

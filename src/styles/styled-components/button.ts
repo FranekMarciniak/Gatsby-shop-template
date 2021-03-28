@@ -72,7 +72,7 @@ export const ButtonLinkSquare = styled(Link)`
 	display: inline-block;
 	margin: 0 5px;
 	border: #8bc34a solid 1px;
-	color: #fff;
+	color: #8bc34a;
 	text-decoration: none;
 	transition: all 0.3s;
 	svg {
@@ -81,6 +81,7 @@ export const ButtonLinkSquare = styled(Link)`
 	&:hover {
 		background-color: #7baf42;
 		transition: all 0.3s;
+		color: #fff;
 		svg {
 			color: #fff;
 			transition: all 0.3s;

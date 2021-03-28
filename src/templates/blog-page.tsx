@@ -11,16 +11,17 @@ import {
 	ImageWrapper,
 	TextWrapper,
 } from "../styles/styled-components/blogPostsPage";
+import PaginationNavigation from "../components/PaginationNavigation";
+
 const PageTemplate = ({ data, location, pageContext }) => {
 	const post = data.mdx;
 	const { allMdx } = data;
-	console.log(allMdx);
 	return (
 		<Layout color="white">
 			<SEO description="Blog page" title="Blog page" />
 			<BlogPostsWrapper>
-				{allMdx.nodes.map((ele) => (
-					<BlogPostWrapper>
+				{allMdx.nodes.map((ele, i) => (
+					<BlogPostWrapper key={i}>
 						<BlogPost>
 							<ImageWrapper>
 								<GatsbyImage
@@ -42,6 +43,13 @@ const PageTemplate = ({ data, location, pageContext }) => {
 						</BlogPost>
 					</BlogPostWrapper>
 				))}
+				<BlogPost>
+					<PaginationNavigation
+						pageContext={pageContext}
+						category={null}
+						page={"blog"}
+					/>
+				</BlogPost>
 			</BlogPostsWrapper>
 		</Layout>
 	);

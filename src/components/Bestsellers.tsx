@@ -50,23 +50,25 @@ function Bestsellers(): ReactElement {
 			<SectionInnerWrapper>
 				{allMdx.nodes.map((ele, i) => (
 					<ProductCardBestseller key={i}>
-						<GatsbyImage
-							image={
-								getImage(
-									ele.frontmatter.main_image
-								) as IGatsbyImageData
-							}
-							alt="product"
-						></GatsbyImage>
-						<ProductCardSubheader>Best seller</ProductCardSubheader>
-						<ProductCardHeader>
-							<Link to={"/libary/product" + ele.frontmatter.path}>
+						<Link to={"/library/product" + ele.frontmatter.path}>
+							<GatsbyImage
+								image={
+									getImage(
+										ele.frontmatter.main_image
+									) as IGatsbyImageData
+								}
+								alt="product"
+							></GatsbyImage>
+							<ProductCardSubheader>
+								Best seller
+							</ProductCardSubheader>
+							<ProductCardHeader>
 								{ele.frontmatter.title}
-							</Link>
-						</ProductCardHeader>
-						<ProductCardPrice>
-							{ele.frontmatter.price}$
-						</ProductCardPrice>
+							</ProductCardHeader>
+							<ProductCardPrice>
+								{ele.frontmatter.price}$
+							</ProductCardPrice>
+						</Link>
 					</ProductCardBestseller>
 				))}
 			</SectionInnerWrapper>

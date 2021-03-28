@@ -125,7 +125,7 @@ exports.createPages = async ({ graphql, actions }) => {
 			const next = index === 0 ? null : posts[index - 1].node;
 
 			createPage({
-				path: "/libary/product" + post.node.frontmatter.path,
+				path: "/library/product" + post.node.frontmatter.path,
 				component: productPost,
 				context: {
 					slug: post.node.fields.slug,
@@ -162,7 +162,7 @@ exports.createPages = async ({ graphql, actions }) => {
 			createPage,
 			items: result.data.allMdx.nodes,
 			itemsPerPage: 9,
-			pathPrefix: "libary", // use category name for pages
+			pathPrefix: "library", // use category name for pages
 			component: productsPage,
 		});
 	});
@@ -198,7 +198,7 @@ exports.createPages = async ({ graphql, actions }) => {
 					createPage,
 					items: posts,
 					itemsPerPage: 9,
-					pathPrefix: "/libary/category/" + category, // use category name for pages
+					pathPrefix: "/library/category/" + category, // use category name for pages
 					component: categorizedProductsPage,
 					context: { category }, // your template for post lists
 				});

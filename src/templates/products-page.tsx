@@ -5,7 +5,7 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 import ProductsLayout from "../components/ProductsLayout";
 import {
-	ProductCardLibary,
+	ProductCardLibrary,
 	ProductCardHeader,
 	ProductCardPrice,
 	ProductCardSubheader,
@@ -13,6 +13,8 @@ import {
 import { GatsbyImage, getImage, IGatsbyImageData } from "gatsby-plugin-image";
 import { ButtonLinkSquare } from "../styles/styled-components/button";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import PaginationNavigation from "../components/PaginationNavigation";
+
 const PageTemplate = ({ data, location, pageContext }) => {
 	// const post = data.mdx;
 	const { allMdx } = data;
@@ -21,43 +23,33 @@ const PageTemplate = ({ data, location, pageContext }) => {
 			<SEO description="Products page" title="Products page" />
 			<ProductsLayout>
 				{allMdx.nodes.map((ele, i) => (
-					<ProductCardLibary key={i}>
-						<GatsbyImage
-							image={
-								getImage(
-									ele.frontmatter.main_image
-								) as IGatsbyImageData
-							}
-							alt="product"
-						></GatsbyImage>
-						<ProductCardSubheader>Best seller</ProductCardSubheader>
-						<ProductCardHeader>
-							<Link to={"/libary/product" + ele.frontmatter.path}>
+					<ProductCardLibrary key={i}>
+						<Link to={"/library/product" + ele.frontmatter.path}>
+							<GatsbyImage
+								image={
+									getImage(
+										ele.frontmatter.main_image
+									) as IGatsbyImageData
+								}
+								alt="product"
+							></GatsbyImage>
+							<ProductCardSubheader>
+								Best seller
+							</ProductCardSubheader>
+							<ProductCardHeader>
 								{ele.frontmatter.title}
-							</Link>
-						</ProductCardHeader>
-						<ProductCardPrice>
-							{ele.frontmatter.price}$
-						</ProductCardPrice>
-					</ProductCardLibary>
+							</ProductCardHeader>
+							<ProductCardPrice>
+								{ele.frontmatter.price}$
+							</ProductCardPrice>
+						</Link>
+					</ProductCardLibrary>
 				))}
-				{pageContext.previousPagePath && (
-					<ButtonLinkSquare
-						to={"/" + pageContext.previousPagePath}
-						rel="prev"
-					>
-						<FaChevronLeft />
-					</ButtonLinkSquare>
-				)}
-
-				{pageContext.nextPagePath && (
-					<ButtonLinkSquare
-						to={"/" + pageContext.nextPagePath}
-						rel="next"
-					>
-						<FaChevronRight />
-					</ButtonLinkSquare>
-				)}
+				<PaginationNavigation
+					pageContext={pageContext}
+					category={null}
+					page={"library"}
+				/>
 			</ProductsLayout>
 		</Layout>
 	);

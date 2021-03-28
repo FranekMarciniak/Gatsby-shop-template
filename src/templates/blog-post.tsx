@@ -12,7 +12,6 @@ import {
 const BlogPostTemplate = ({ data, location, pageContext }) => {
 	const post = data.mdx;
 	const siteTitle = data.site.siteMetadata.title;
-	console.log(post.frontmatter.description);
 	return (
 		<Layout color="white">
 			<SEO

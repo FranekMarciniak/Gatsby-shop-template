@@ -40,7 +40,6 @@ function FooterComponent(): ReactElement {
 		})
 		.splice(0, 4);
 
-	console.log(filtered);
 	return (
 		<Footer>
 			<FooterInnerWrapper>
@@ -51,7 +50,7 @@ function FooterComponent(): ReactElement {
 						</li>
 						{filtered.map((ele, i) => (
 							<li key={i}>
-								<Link to={"/libary/category/" + ele}>
+								<Link to={"/library/category/" + ele}>
 									{ele}
 								</Link>
 							</li>
@@ -92,7 +91,7 @@ function FooterComponent(): ReactElement {
 							<h4>Fast Links</h4>
 						</li>
 						<li>
-							<Link to="/libary">Libary</Link>
+							<Link to="/library">library</Link>
 						</li>
 						<li>
 							<Link to="/about">About</Link>

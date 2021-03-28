@@ -28,7 +28,9 @@ import {
 } from "../styles/styled-components/relatedProducts";
 const ProductTemplate = ({ data, location, pageContext }) => {
 	const post = data.mdx;
-	const related = data.allMdx.nodes;
+	const related = data.allMdx.nodes
+		? data.allMdx.nodes.slice(0, 3)
+		: data.allMdx.nodes;
 	const siteTitle = data.site.siteMetadata.title;
 	post.frontmatter.category;
 	const [currentPicture, setCurrentPicture] = useState(0);
@@ -38,7 +40,6 @@ const ProductTemplate = ({ data, location, pageContext }) => {
 			getImage(ele.childrenImageSharp[0].gatsbyImageData)
 		),
 	];
-
 	return (
 		<Layout color="white">
 			<SEO
@@ -60,6 +61,7 @@ const ProductTemplate = ({ data, location, pageContext }) => {
 										opacity:
 											i === currentPicture ? "1" : "0.6",
 									}}
+									key={i}
 								>
 									<GatsbyImage
 										key={i}
@@ -77,7 +79,7 @@ const ProductTemplate = ({ data, location, pageContext }) => {
 								<Link to="/">Home</Link> /{" "}
 								<Link
 									to={
-										"/libary/category/" +
+										"/library/category/" +
 										post.frontmatter.category
 									}
 								>
@@ -93,7 +95,7 @@ const ProductTemplate = ({ data, location, pageContext }) => {
 								{pageContext.previous && (
 									<ButtonLinkCircle
 										to={
-											"/libary/product" +
+											"/library/product" +
 											pageContext.previous.frontmatter
 												.path
 										}
@@ -106,7 +108,7 @@ const ProductTemplate = ({ data, location, pageContext }) => {
 								{pageContext.next && (
 									<ButtonLinkCircle
 										to={
-											"/libary/product" +
+											"/library/product" +
 											pageContext.next.frontmatter.path
 										}
 										rel="next"
@@ -136,33 +138,32 @@ const ProductTemplate = ({ data, location, pageContext }) => {
 					</SectionBody>
 					<Section>
 						<SectionInnerWrapper>
-							{console.log(related)}
 							{related.map((ele, i) => (
 								<ProductCardBestseller key={i}>
-									<GatsbyImage
-										image={
-											getImage(
-												ele.frontmatter.main_image
-											) as IGatsbyImageData
+									<Link
+										to={
+											"/library/product" +
+											ele.frontmatter.path
 										}
-										alt="product"
-									></GatsbyImage>
-									<ProductCardSubheader>
-										Best seller
-									</ProductCardSubheader>
-									<ProductCardHeader>
-										<Link
-											to={
-												"/libary/product" +
-												ele.frontmatter.path
+									>
+										<GatsbyImage
+											image={
+												getImage(
+													ele.frontmatter.main_image
+												) as IGatsbyImageData
 											}
-										>
+											alt="product"
+										></GatsbyImage>
+										<ProductCardSubheader>
+											Best seller
+										</ProductCardSubheader>
+										<ProductCardHeader>
 											{ele.frontmatter.title}
-										</Link>
-									</ProductCardHeader>
-									<ProductCardPrice>
-										{ele.frontmatter.price}$
-									</ProductCardPrice>
+										</ProductCardHeader>
+										<ProductCardPrice>
+											{ele.frontmatter.price}$
+										</ProductCardPrice>
+									</Link>
 								</ProductCardBestseller>
 							))}
 						</SectionInnerWrapper>

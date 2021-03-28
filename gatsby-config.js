@@ -89,7 +89,7 @@ module.exports = {
 			},
 		},
 		{
-			resolve: "gatsby-plugin-snipcart",
+			resolve: "gatsby-plugin-snipcartv3",
 			options: {
 				autopop: true,
 				apiKey:
