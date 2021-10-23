@@ -1,8 +1,8 @@
 // custom typefaces
-import "typeface-montserrat";
 import "typeface-merriweather";
-// normalize CSS across browsers
-import "./src/styles/normalize.css";
+import "typeface-montserrat";
 // custom CSS styles
 import "./src/styles/globalStyles.css";
-// import "./src/styles/cart.css";
+// normalize CSS across browsers
+import "./src/styles/normalize.css";
+

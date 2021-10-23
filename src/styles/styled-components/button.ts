@@ -1,5 +1,5 @@
-import styled from "styled-components";
 import { Link } from "gatsby";
+import styled from "styled-components";
 export const ButtonLink = styled(Link)`
 	padding: 15px 35px;
 	background-color: var(--e-global-color-8BC34A);
