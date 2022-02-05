@@ -1,6 +1,6 @@
 module.exports = {
 	siteMetadata: {
-		title: `ExamesRush`,
+		title: `Gatsby-starter`,
 		author: {
 			name: `Franciszek Marciniak`,
 		},
@@ -64,7 +64,7 @@ module.exports = {
 			resolve: `gatsby-plugin-manifest`,
 			options: {
 				name: `Gatsby Starter Ecommerce`,
-				short_name: `ExamesRush`,
+				short_name: `Gatsby-starter`,
 				start_url: `/`,
 				background_color: `#ffffff`,
 				theme_color: `#663399`,
