@@ -56,21 +56,13 @@ function FooterComponent(): ReactElement {
 							</li>
 						))}
 					</ul>
+
 					<ul>
 						<li>
-							<h4>Popular</h4>
+							<h4>Legal matters</h4>
 						</li>
 						<li>
-							<Link to="#">Some popular</Link>
-						</li>
-						<li>
-							<Link to="#">Some popular</Link>
-						</li>
-						<li>
-							<Link to="#">Some popular</Link>
-						</li>
-						<li>
-							<Link to="#">Some popular</Link>
+							<Link to="#">PDF</Link>
 						</li>
 					</ul>
 				</UlWrapper>
@@ -80,9 +72,8 @@ function FooterComponent(): ReactElement {
 						alt="logo"
 					></StaticImage>
 					<p>
-						Porque seu tempo é importante. Guias de preparo para
-						exames de certificação baseados em perguntas de exames
-						reais.{" "}
+						Ad pariatur aliqua laboris deserunt aute ut et dolore ut
+						minim eu.
 					</p>
 				</LogoWrapper>
 				<UlWrapper>
@@ -101,23 +92,6 @@ function FooterComponent(): ReactElement {
 						</li>
 						<li>
 							<Link to="/cart">Cart</Link>
-						</li>
-					</ul>
-					<ul>
-						<li>
-							<h4>Legal matters</h4>
-						</li>
-						<li>
-							<Link to="#">dddddd</Link>
-						</li>
-						<li>
-							<Link to="#">dddddd</Link>
-						</li>
-						<li>
-							<Link to="#">dddddd</Link>
-						</li>
-						<li>
-							<Link to="#">dddddd</Link>
 						</li>
 					</ul>
 				</UlWrapper>

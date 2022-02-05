@@ -19,17 +19,16 @@ function Hero(): ReactElement {
 					></StaticImage>
 				</ImageOuterWrapper>
 				<TextContentWrapper>
-					<h5>Porque seu tempo é importante.</h5>
-					<h1>Nós Facilitamos os Exames!</h1>
+					<h1>What a great template</h1>
 					<p>
-						Não só respostas de exames. Guias de preparo para
-						certificação baseados em perguntas de exames reais,
-						respostas 100% precisas e verificadas, explicações
-						detalhadas, guias orientados por resultados, dicas
-						práticas, e muito mais com ExamesRush. Tudo o que você
-						precisa para obter sucesso rapidamente.
+						Consequat id irure enim incididunt nisi enim. Tempor
+						reprehenderit proident laborum ipsum. Non laborum et
+						aliquip culpa aliquip aliqua. Reprehenderit ex labore
+						culpa sit id dolore elit. Officia amet incididunt sunt
+						fugiat consequat occaecat aliqua ullamco anim in esse
+						aute aliquip veniam.
 					</p>
-					<ButtonLink to="/shop">Explore nossa biblioteca</ButtonLink>
+					<ButtonLink to="/shop">Check out the shop</ButtonLink>
 				</TextContentWrapper>
 			</SectionInnerWrapper>
 		</Section>

@@ -29,31 +29,6 @@ function HeaderComponent({ color }): ReactElement {
 		{ name: "blog", path: "/blog", active: false, dropdown: null },
 		// { name: "about us", path: "/about", active: false, dropdown: null },
 		{ name: "contact", path: "/contact", active: false, dropdown: null },
-		{
-			name: "account",
-			path: null,
-			active: false,
-			dropdown: [
-				{
-					name: "orders",
-					path: "#",
-					className: "snipcart-user-profile",
-					active: false,
-				},
-				{
-					name: "my account",
-					className: "snipcart-edit-profile",
-					path: "#",
-					active: false,
-				},
-				{
-					name: "cart",
-					path: "#",
-					className: "snipcart-checkout",
-					active: false,
-				},
-			],
-		},
 	];
 	return (
 		<Header color={color}>

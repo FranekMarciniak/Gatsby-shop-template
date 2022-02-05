@@ -69,7 +69,7 @@ module.exports = {
 				background_color: `#ffffff`,
 				theme_color: `#663399`,
 				display: `minimal-ui`,
-				icon: `src/images/site-icon.png`, // This path is relative to the root of the site.
+				icon: `src/images/favicon.png`, // This path is relative to the root of the site.
 			},
 		},
 		`gatsby-plugin-react-helmet`,
@@ -92,8 +92,7 @@ module.exports = {
 			resolve: "gatsby-plugin-snipcartv3",
 			options: {
 				autopop: true,
-				apiKey:
-					"Yzk2MTRiZDMtNDYxZi00MmRkLThhOWQtN2M3MzNiMmJhNTQ4NjM3NTIxODM3NjE1OTAzMzMz",
+				apiKey: "Yzk2MTRiZDMtNDYxZi00MmRkLThhOWQtN2M3MzNiMmJhNTQ4NjM3NTIxODM3NjE1OTAzMzMz",
 			},
 		},
 		// this (optional) plugin enables Progressive Web App + Offline functionality

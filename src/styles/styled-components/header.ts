@@ -5,7 +5,7 @@ export const HeaderInnerWrapper = styled.div`
 	max-width: 1300px;
 	height: 4em;
 	margin: 0 auto;
-	padding: 1em 0 1em 0;
+	padding: 1em 0 1em 20px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;

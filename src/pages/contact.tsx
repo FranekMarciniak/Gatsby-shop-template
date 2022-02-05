@@ -17,15 +17,15 @@ function Contact(): ReactElement {
 			<InfomationContainer>
 				<InformationItem>
 					<FaWhatsapp />
-					<p>+37281597253</p>
+					<p>+48 513 978 944</p>
 				</InformationItem>
 				<InformationItem>
 					<FaRegEnvelope />
-					<p>info@yzydo.com</p>
+					<p>contact@franekmarciniak.pl</p>
 				</InformationItem>
 				<InformationItem>
 					<FaMapMarkerAlt />
-					<p>933 Alameda Araguaia, Sao Paulo</p>
+					<p>Poznań, Poland</p>
 				</InformationItem>
 			</InfomationContainer>
 		</Layout>
